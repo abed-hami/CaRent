@@ -25,13 +25,6 @@ class Car{
   void setDuration(int dur) {
     this.duration = dur;
 
-    if (dur >= 10 && dur < 20) {
-      price = getprice() + 100;
-    } else if (dur >= 20 && dur < 30) {
-      price = getprice() + 150;
-    } else {
-      price = getprice() + 200;
-    }
   }
 
 
@@ -40,17 +33,19 @@ class Car{
     return duration;
   }
 
-  int getTotal(){
-    int insuranceFees= insurance?100:0;
-    int fPrice = price+insuranceFees;
+  double getTotal(){
 
-    if(duration==1){
-      return fPrice;
+    var initialPrice = price.toDouble();
+    if (duration ==1) {
+
+      return initialPrice;
+    } else if (duration == 2) {
+      if(initialPrice<price*1.5)
+        return (price * 1.5);
+      return price/3;
     }
-    else if(duration==2){
-      return (fPrice+100);
-    }
-    return fPrice+200;
+      return price * 3;
+
 
   }
 

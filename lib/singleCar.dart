@@ -37,37 +37,37 @@ class _SingleCarState extends State<SingleCar> {
             children: [
               Radio(
                 groupValue: timeduration,
-                value: 10,
+                value: 1,
                 onChanged: (value) {
                   setState(() {
                     timeduration = value as int;
-                    widget.selectedCar.setDuration(10);
+                    widget.selectedCar.setDuration(1);
                   });
                 },
               ),
-              Text("10-15 days",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+              Text("1 week",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
               Radio(
                 groupValue: timeduration,
-                value: 16,
+                value: 2,
                 onChanged: (value) {
                   setState(() {
                     timeduration = value as int;
-                    widget.selectedCar.setDuration(16);
+                    widget.selectedCar.setDuration(2);
                   });
                 },
               ),
-              Text("16-30 days",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+              Text("2 weeks",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
               Radio(
                 groupValue: timeduration,
-                value: 30,
+                value: 3,
                 onChanged: (value) {
                   setState(() {
                     timeduration = value as int;
-                    widget.selectedCar.setDuration(30);
+                    widget.selectedCar.setDuration(3);
                   });
                 },
               ),
-              Text("30+",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+              Text("3 weeks",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
               // Add more details as needed
             ],
           ),

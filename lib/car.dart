@@ -19,6 +19,21 @@ class Car{
   String getDescription(){
     return description;
   }
+  int getprice(){
+    return this.price;
+  }
+  void setDuration(int dur) {
+    this.duration = dur;
+
+    if (dur >= 10 && dur < 20) {
+      price = getprice() + 100;
+    } else if (dur >= 20 && dur < 30) {
+      price = getprice() + 150;
+    } else {
+      price = getprice() + 200;
+    }
+  }
+
 
 
   int getDuration(){

@@ -1,8 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'main.dart';
 import 'car.dart';
-
+import 'singleCar.dart';
 
 
 class Display extends StatelessWidget {
@@ -22,13 +21,7 @@ class Display extends StatelessWidget {
 
         ),
         backgroundColor:  Colors.amber[500],
-
-
-
-
-
-
-      ),
+ ),
       body:
          ListView.builder(
           itemCount: cars.length,
@@ -43,13 +36,14 @@ class Display extends StatelessWidget {
                   ),
                   title: Text(cars[index].model,style: TextStyle(fontSize: 18),),
                   subtitle: Text('Rent Price: \$${cars[index].getTotal()}', style: TextStyle(fontSize: 15),),
-                  /*onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => SingleCar(selectedPizza: cars[index]),
-                  ),
-                );
-              },*/
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => SingleCar(selectedCar: cars[index]),
+                      ),
+                    );
+                  },
+
                 ),
                 SizedBox(height: 10), // Adjust the height according to your preference
               ],

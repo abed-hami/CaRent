@@ -40,3 +40,17 @@ class Car{
   }
 
 }
+
+List<Car> cars=[
+
+  Car("Mercedes C300", "2015, Full option, AC, Bluetooth, Electric Windows",100,"assets/c300.jpg"),
+  Car("Honda Civic", "2017, Full option, AC, Bluetooth, Electric Windows",80,"assets/civic-2017.jpeg"),
+  Car("Hyundai Elantra", "2013, Full option, AC, Bluetooth, Electric Windows",65,"assets/elantra-2013.jpg"),
+  Car("Toyota Corolla", "2023, Full option, AC, Bluetooth, Electric Windows",130,"assets/corolla-2023.jpg"),
+  Car("BMW X3", "2010, Full option, AC, Bluetooth, Electric Windows",89,"assets/x3-2010.jpg"),
+  Car("Kia Picanto", "2020, Full option, AC, Bluetooth, Electric Windows",75,"assets/picanto-2020.jpg"),
+  Car("Range Rover Sport", "2020, Full option, AC, Bluetooth, Electric Windows",180,"assets/rangeroverSport.jpeg"),
+
+
+
+];

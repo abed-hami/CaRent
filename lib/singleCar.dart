@@ -25,14 +25,27 @@ class _SingleCarState extends State<SingleCar> {
           Image(
             image: AssetImage(widget.selectedCar.getImage()),
           ),
+          SizedBox(height: 30,),
           Text(
             widget.selectedCar.getModel(),
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
           ),
-          Text(
-            widget.selectedCar.getDescription(),
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+          SizedBox(height: 20,),
+          Padding(
+            padding: EdgeInsets.only(left: 10), // Adjust the left padding as needed
+            child: Text(
+              widget.selectedCar.getDescription(),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                letterSpacing: 2,
+              ),
+            ),
           ),
+
+
+          SizedBox(height: 20,),
+
           Row(
             children: [
               Radio(
@@ -71,7 +84,18 @@ class _SingleCarState extends State<SingleCar> {
               // Add more details as needed
             ],
           ),
-          Text(widget.selectedCar.getTotal().toString(),style:TextStyle(fontSize: 30,),)
+          SizedBox(height: 30,),
+          Text('Bill : \$${widget.selectedCar.getTotal().toString()}', style: TextStyle(fontSize: 30, color: Colors.red, fontWeight: FontWeight.w900)),
+
+          SizedBox(height: 30,),
+          ElevatedButton(
+            onPressed: (){},
+            child:const Text(
+              'Check out !',
+              style: TextStyle(fontSize: 20), // Adjust the font size as needed
+            ),
+          )
+
         ],
       ),
     );

@@ -56,29 +56,59 @@ class _InfoWidgetState extends State<InfoWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+
+          title: const Text('CARENT'),
+          titleTextStyle: const TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+              fontWeight: FontWeight.bold
+
+          ),
+          backgroundColor:  Colors.amber[500],
+        ),
        body: Center(child: Column(children: [
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 150),
+         Text("Fill out your info ",style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900,letterSpacing: 2),),
+         const SizedBox(height: 20),
 
-          SizedBox(width: 200, height: 50,
+         SizedBox(
+           width: 300,
+           height: 70,
+           child: TextField(
+             controller: _controllerName,
+             decoration: InputDecoration(
+               border: OutlineInputBorder(
+                 borderRadius: BorderRadius.all(Radius.circular(10)),
+               ),
+               hintText: 'Enter Your Name',
+             ),
+           ),
+         ),
 
-            child: TextField(controller: _controllerName,
+         const SizedBox(height: 10),
 
-                decoration: const InputDecoration(border: OutlineInputBorder(), hintText: 'Enter Your Name')),
+         SizedBox(
+           width: 300,
+           height: 70,
+           child: TextField(
+             controller: _controllerCard,
+             decoration: InputDecoration(
+               border: const OutlineInputBorder(
+                 borderSide: BorderSide(
+                   color: Colors.black,  // Border color
+                   width: 7,           // Border width
+                 ),
+                 borderRadius: BorderRadius.all(Radius.circular(10)),
+               ),
+               hintText: 'Enter Your Card Serial Num',
+             ),
+           ),
+         ),
 
-          ),
 
-          const SizedBox(height: 10),
-
-          SizedBox(width: 200, height: 50,
-
-            child: TextField(controller: _controllerCard,
-
-                decoration: const InputDecoration(border: OutlineInputBorder(), hintText: 'Enter Your Card Serial Num')),
-
-          ),
-
-          const SizedBox(height: 10),
+         const SizedBox(height: 10),
 
           ElevatedButton(onPressed: openBill,
 

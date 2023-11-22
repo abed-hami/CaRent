@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'car.dart';
-
+import 'information.dart';
 class SingleCar extends StatefulWidget {
   final Car selectedCar;
 
@@ -89,7 +89,13 @@ class _SingleCarState extends State<SingleCar> {
 
           SizedBox(height: 30,),
           ElevatedButton(
-            onPressed: (){},
+            onPressed: (){
+              Navigator.of(context).push(
+
+                  MaterialPageRoute(builder: (context) => const InfoWidget())
+
+              );
+            },
             child:const Text(
               'Check out !',
               style: TextStyle(fontSize: 20), // Adjust the font size as needed

@@ -1,7 +1,8 @@
-import 'package:carent/car.dart';
+
 import 'package:flutter/material.dart';
 import 'carDisplay.dart';
-
+import 'car.dart';
+import 'singleCar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -63,6 +64,7 @@ class Home extends StatelessWidget {
                   SizedBox(height:40),
                   Text("CARENT where you find best cars and best prices", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold, fontFamily:''),),
                   SizedBox(height:40),
+
 
 
                 ],

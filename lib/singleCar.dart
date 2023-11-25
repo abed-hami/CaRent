@@ -11,7 +11,7 @@ class SingleCar extends StatefulWidget {
 }
 
 class _SingleCarState extends State<SingleCar> {
-  int? timeduration;
+  int? timeduration =1;
 
   @override
   Widget build(BuildContext context) {
@@ -46,46 +46,64 @@ class _SingleCarState extends State<SingleCar> {
 
           SizedBox(height: 20,),
 
-          Row(
-            children: [
-              Radio(
-                groupValue: timeduration,
+          DropdownButton<int>(
+            value: timeduration,
+            hint: Text("Select number of days"), // Displayed when no option is selected
+            items: [
+              DropdownMenuItem(
                 value: 1,
-                onChanged: (value) {
-                  setState(() {
-                    timeduration = value as int;
-                    widget.selectedCar.setDuration(1);
-                  });
-                },
+                child: Text("1 day", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
               ),
-              Text("1 week",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-              Radio(
-                groupValue: timeduration,
+              DropdownMenuItem(
                 value: 2,
-                onChanged: (value) {
-                  setState(() {
-                    timeduration = value as int;
-                    widget.selectedCar.setDuration(2);
-                  });
-                },
+                child: Text("2 days", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
               ),
-              Text("2 weeks",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-              Radio(
-                groupValue: timeduration,
+              DropdownMenuItem(
                 value: 3,
-                onChanged: (value) {
-                  setState(() {
-                    timeduration = value as int;
-                    widget.selectedCar.setDuration(3);
-                  });
-                },
+                child: Text("3 days", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
               ),
-              Text("3 weeks",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-              // Add more details as needed
+              DropdownMenuItem(
+                value: 4,
+                child: Text("4 days", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+              ),
+              DropdownMenuItem(
+                value: 5,
+                child: Text("5 days", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+              ),
+              DropdownMenuItem(
+                value: 6,
+                child: Text("6 days", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+              ),
+              DropdownMenuItem(
+                value: 7,
+                child: Text("7 days", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+              ),
+              DropdownMenuItem(
+                value: 8,
+                child: Text("8 days", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+              ),
+              DropdownMenuItem(
+                value: 9,
+                child: Text("9 days", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+              ),
+              DropdownMenuItem(
+                value: 10,
+                child: Text("10 days(discount included)", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+              ),
+              // Add more items as needed
             ],
+            onChanged: (value) {
+              setState(() {
+                timeduration = value;
+                widget.selectedCar.setDuration(value!);
+              });
+            },
           ),
           SizedBox(height: 30,),
-          Text('Bill : \$${widget.selectedCar.getTotal().toString()}', style: TextStyle(fontSize: 30, color: Colors.red, fontWeight: FontWeight.w900)),
+          Center(
+           child: Text('${widget.selectedCar.getTotal()}', style: TextStyle(fontSize: 21, color: Colors.red, fontWeight: FontWeight.w900)),
+          )
+          ,
 
           SizedBox(height: 30,),
           ElevatedButton(

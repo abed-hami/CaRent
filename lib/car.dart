@@ -33,20 +33,14 @@ class Car{
     return duration;
   }
 
-  double getTotal(){
+  String getTotal(){
 
-    var initialPrice = price.toDouble();
-    if (duration ==1) {
+      var initialPrice = price;
 
-      return initialPrice;
-    } else if (duration == 2) {
-      if(initialPrice<price*1.5)
-        return (price * 1.5);
-      return price/3;
-    }
-      return price * 3;
-
-
+      if(duration==10){
+        return "Your total for 10 days is with a discount= " +((price *duration)-(initialPrice)).toString() +"\$";
+      }
+      return "Your price for "+ duration.toString()+" day(s) is "+(price *duration).toString() +"\$";
   }
 
 }

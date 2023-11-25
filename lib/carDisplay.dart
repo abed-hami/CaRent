@@ -35,7 +35,7 @@ class Display extends StatelessWidget {
                     image: AssetImage(cars[index].image, ),width:100,height:200
                   ),
                   title: Text(cars[index].model,style: TextStyle(fontSize: 18),),
-                  subtitle: Text('Rent Price: \$${cars[index].getTotal()}', style: TextStyle(fontSize: 15),),
+                  subtitle: Text('Rent Price: ${cars[index].getTotal()}', style: TextStyle(fontSize: 15),),
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(

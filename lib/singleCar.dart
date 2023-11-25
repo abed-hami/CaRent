@@ -110,7 +110,7 @@ class _SingleCarState extends State<SingleCar> {
             onPressed: (){
               Navigator.of(context).push(
 
-                  MaterialPageRoute(builder: (context) => const InfoWidget())
+                  MaterialPageRoute(builder: (context) =>  InfoWidget(selectedDays: timeduration ?? 1))
 
               );
             },

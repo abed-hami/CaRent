@@ -2,13 +2,14 @@ import 'package:carent/bill.dart';
 import 'package:flutter/material.dart';
 import 'renter.dart';
 class InfoWidget extends StatefulWidget {
-  const InfoWidget({super.key});
-
+  const InfoWidget({required this.selectedDays, super.key});
+  final int selectedDays;
   @override
   State<InfoWidget> createState() => _InfoWidgetState();
 }
 
 class _InfoWidgetState extends State<InfoWidget> {
+
   final TextEditingController _controllerName = TextEditingController();
 
   final TextEditingController _controllerCard = TextEditingController();
@@ -34,11 +35,11 @@ class _InfoWidgetState extends State<InfoWidget> {
 
       Navigator.of(context).push(
 
-          MaterialPageRoute(builder: (context) => const BillWidget(),
+          MaterialPageRoute(builder: (context) => BillWidget(),
 
 // we send data using the settings and pass to it an Employee object
 
-              settings: RouteSettings(arguments: Renter(name, card))
+              settings: RouteSettings(arguments: Renter(name, card, widget.selectedDays),)
 
           )
 

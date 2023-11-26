@@ -62,19 +62,61 @@ class Home extends StatelessWidget {
                   SizedBox(height: 1,),
                   Image.asset("assets/home.jpg", fit: BoxFit.fill,height: 235,),
                   SizedBox(height:40),
-                  Text("CARENT where you find best cars and best prices", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold, fontFamily:''),),
-                  SizedBox(height:40),
+
+                  const SizedBox(height:40),
+
+                  Text("Services", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, fontFamily:''),),
+                  const SizedBox(height:40),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      _ServiceCard('24/7 Support', Icons.call, ),
+                      _ServiceCard('GPS Navigation', Icons.navigation),
+                      _ServiceCard('Insurance Options', Icons.security),
+                    ],
+                  ),
 
 
 
                 ],
-              )
+
+              ),
+
 
 
         )
 
     );
 
+  }
+}
+
+class _ServiceCard extends StatelessWidget {
+  final String title;
+  final IconData icon;
+
+  const _ServiceCard(this.title, this.icon);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            icon,
+            size: 40.0,
+            color: Colors.orangeAccent,
+          ),
+          SizedBox(height: 8.0),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+
+          ),
+        ],
+      ),
+    );
   }
 }
 
